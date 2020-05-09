@@ -180,7 +180,6 @@ export default {
           this.loading = true;
           this.$store.dispatch("user/login", this.loginForm)
             .then(() => {
-              console.log("success submit!!");
               this.$router.push({
                 path: this.redirect || "/",
                 query: this.otherQuery
@@ -188,11 +187,9 @@ export default {
               this.loading = false;
             })
             .catch(() => {
-              console.log("errorddd submit!!");
               this.loading = false;
             });
         } else {
-          console.log("error submit!!");
           return false;
         }
       });
